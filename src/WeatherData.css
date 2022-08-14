@@ -1,0 +1,24 @@
+.WeatherDetails {
+  display: flex;
+}
+.data {
+  padding: 10px;
+}
+.data h2 {
+  font-size: 64px;
+  font-weight: 400;
+}
+.data img {
+  width: 64px;
+  height: 64px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.units {
+  position: relative;
+  top: 10px;
+  left: 5px;
+}
+.units a {
+  text-decoration: none;
+}
