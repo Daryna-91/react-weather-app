@@ -5,9 +5,19 @@ import "./styles.css";
 
 export default function App() {
   return (
-    <div className="App">
-      <CityForm />
-      <WeatherData />
+    <div>
+      <div className="App">
+        <CityForm />
+        <WeatherData />
+      </div>
+      <a
+        href="https://github.com/Daryna-91/react-weather-app"
+        className="repository-link"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Coded by Daryna Lytvynenko
+      </a>
     </div>
   );
 }

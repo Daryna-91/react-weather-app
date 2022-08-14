@@ -11,3 +11,7 @@ h1,
 p {
   opacity: 0.7;
 }
+a.repository-link {
+  margin-left: 28%;
+  text-decoration: none;
+}
