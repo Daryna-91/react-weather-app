@@ -3,6 +3,7 @@
   margin: 10px auto;
   padding: 5px 20px 20px 20px;
   border: 1px solid rgb(233, 228, 228);
+  border-radius: 4px;
 }
 p {
   margin-bottom: 0;
@@ -12,6 +13,6 @@ p {
   opacity: 0.7;
 }
 a.repository-link {
-  margin-left: 28%;
+  margin-left: 24%;
   text-decoration: none;
 }
