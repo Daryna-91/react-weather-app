@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -10,7 +11,6 @@ function WeatherData() {
   const [ready, setReady] = useState(false);
   const [data, setData] = useState({});
   function handleResponse(response) {
-    console.log(response.data);
     setData({
       city: response.data.name,
       temperature: response.data.main.temp,
@@ -18,6 +18,7 @@ function WeatherData() {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      date: new Date(response.data.dt * 1000),
     });
 
     setReady(true);
@@ -50,7 +51,9 @@ function WeatherData() {
 
         <div WeatherData className="data">
           <h1>{data.city}</h1>
-          <p>Last updated: Tuesday 10:00</p>
+          <p>
+            <FormattedDate date={data.date} />
+          </p>
           <p className="text-capitalize">{data.description}</p>
           <div className="row">
             <div className="col-6">
