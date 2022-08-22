@@ -7,7 +7,8 @@ import Col from "react-bootstrap/Col";
 import axios from "axios";
 
 import "./WeatherData.css";
-function WeatherData() {
+function WeatherData(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [ready, setReady] = useState(false);
   const [data, setData] = useState({});
   function handleResponse(response) {
@@ -23,10 +24,24 @@ function WeatherData() {
 
     setReady(true);
   }
+
+  function search() {
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ec6bcf916e3984240b14311d78ff3d16&units=metric`;
+    axios.get(url).then(handleResponse);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleChange(event) {
+    setCity(event.target.value);
+  }
+
   if (ready) {
     return (
       <div className="weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <Container>
             <Row>
               <Col md={9}>
@@ -34,6 +49,7 @@ function WeatherData() {
                   type="text"
                   placeholder="Enter the city name"
                   autofocus="on"
+                  onChange={handleChange}
                 />
               </Col>
               <Col md={3}>
@@ -41,6 +57,7 @@ function WeatherData() {
                   type="button"
                   class="btn btn-secondary"
                   id="currentLocationButton"
+                  onClick={handleSubmit}
                 >
                   Search
                 </Button>
@@ -74,9 +91,7 @@ function WeatherData() {
       </div>
     );
   } else {
-    let city = "New York";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ec6bcf916e3984240b14311d78ff3d16&units=metric`;
-    axios.get(url).then(handleResponse);
+    search();
     return "Loading...";
   }
 }
