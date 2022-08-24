@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import axios from "axios";
-
 import "./WeatherData.css";
+
 function WeatherData(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [ready, setReady] = useState(false);
@@ -76,10 +77,7 @@ function WeatherData(props) {
             <div className="col-6">
               <div className="WeatherDetails">
                 <img src={data.icon} alt="Cloudy" class="float-left" />
-                <h2>{Math.round(data.temperature)}</h2>
-                <span class="units">
-                  <a href="/">°C</a> | <a href="/">°F</a>
-                </span>
+                <WeatherTemperature celsius={data.temperature} />
               </div>
             </div>
             <div className="col-6">

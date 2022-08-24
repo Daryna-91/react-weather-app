@@ -30,3 +30,6 @@ form {
 .units a {
   text-decoration: none;
 }
+.currentWeather {
+  display: flex;
+}
