@@ -1,0 +1,10 @@
+.WeatherForecast {
+  text-align: center;
+}
+.ForecastDay,
+.ForecastTempMax {
+  opacity: 0.9;
+}
+.ForecastTempMin {
+  opacity: 0.6;
+}

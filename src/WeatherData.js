@@ -86,6 +86,7 @@ function WeatherData(props) {
             </div>
           </div>
         </div>
+        <WeatherForecast coordinates={data.coordinates} />
       </div>
     );
   } else {
