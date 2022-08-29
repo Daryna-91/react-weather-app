@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./WeatherForecastDay.css";
 export default function WeatherForecastDay(props) {
   function day() {
     let date = new Date(props.dayData.dt * 1000);
