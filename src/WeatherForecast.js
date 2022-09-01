@@ -28,6 +28,8 @@ export default function WeatherForecast(props) {
                   <WeatherForecastDay dayData={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>

@@ -51,7 +51,7 @@ function WeatherData(props) {
                 <input
                   type="text"
                   placeholder="Enter the city name"
-                  autofocus="on"
+                  autoFocus="on"
                   onChange={handleChange}
                 />
               </Col>
@@ -78,7 +78,7 @@ function WeatherData(props) {
           <div className="row">
             <div className="col-6">
               <div className="WeatherDetails">
-                <img src={data.icon} alt="Cloudy" class="float-left" />
+                <img src={data.icon} alt="Cloudy" className="float-left" />
                 <WeatherTemperature celsius={data.temperature} />
               </div>
             </div>
